@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-
 class FormaGeometrica(ABC):
 
     @abstractmethod
@@ -9,8 +8,6 @@ class FormaGeometrica(ABC):
     @abstractmethod
     def calcular_perimetro(self):
         pass
-
-
 class Retangulo(FormaGeometrica):
     def __init__(self, base, altura):
         self.base = base
@@ -21,8 +18,6 @@ class Retangulo(FormaGeometrica):
 
     def calcular_perimetro(self):
         return 2 * (self.base + self.altura)
-
-
 class Triangulo(FormaGeometrica):
     def __init__(self, l1, l2, l3):
         self.l1 = l1
@@ -37,7 +32,6 @@ class Triangulo(FormaGeometrica):
         s = p / 2
         return (s * (s - self.l1) * (s - self.l2) * (s - self.l3)) ** 0.5
 
-
 # POLIMORFISMO 
 
 formas = [
@@ -51,3 +45,4 @@ for forma in formas:
     print("Perímetro:", forma.calcular_perimetro())
     print("-" * 30)
 # a lista formas contém objetos diferentes, mas o mesmo método é chamado: calcular_area e calcular_perimetro.
+

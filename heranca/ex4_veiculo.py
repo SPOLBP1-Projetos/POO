@@ -1,4 +1,4 @@
-class Veiculo:
+class Veiculo: # classe mãe
     def __init__(self, marca, modelo):
         self.marca = marca
         self.modelo = modelo
@@ -8,7 +8,7 @@ class Veiculo:
         print(f"Modelo: {self.modelo}")
 
 
-class Carro(Veiculo):
+class Carro(Veiculo): # classe filha
     def __init__(self, marca, modelo, num_portas):
         super().__init__(marca, modelo) # esse super serve para que em vez de repetir código, chamamos o método da classe mãe e depois acrescentamos as informações extras.
         self.num_portas = num_portas # nesse caso, o número de portas é um atributo específico da classe Carro, mas obviamente não seria da classe Moto por exemplo.
@@ -28,7 +28,6 @@ class Moto(Veiculo):
         super().exibir_detalhes()
         print(f"Cilindradas: {self.cilindradas} cc")
         print("-" * 30)
-
 
 # objetos de Carro e Moto
 carro1 = Carro("Toyota", "Corolla", 4)
